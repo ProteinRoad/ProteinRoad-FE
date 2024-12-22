@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "고단백",
+    "slug": "RNNaverMapTutorial",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "proteinroad",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F2F8E1"
+    },
+    "fonts": [
+      {
+        "name": "Pretendard",
+        "uri": "./assets/fonts/Pretendard-Variable.ttf"
+      }
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.proteinroad.app"
+    },
+    "android": {
+      "package": "com.proteinroad.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-splash-screen",
+      "expo-router",
+      "expo-asset",
+      [
+        "@mj-studio/react-native-naver-map",
+        {
+          "client_id": "jm9jw7un1h",
+          "android": {
+            "ACCESS_FINE_LOCATION": true,
+            "ACCESS_COARSE_LOCATION": true,
+            "ACCESS_BACKGROUND_LOCATION": true
+          },
+          "ios": {
+            "NSLocationAlwaysAndWhenInUseUsageDescription": "주변 식당 정보를 제공하기 위해 위치 권한이 필요합니다.",
+            "NSLocationWhenInUseUsageDescription": "주변 식당 정보를 제공하기 위해 위치 권한이 필요합니다.",
+            "NSLocationTemporaryUsageDescriptionDictionary": {
+              "purposeKey": "LocationAccuracy",
+              "usageDescription": "더 정확한 위치 기반 서비스 제공을 위해 정확한 위치 정보가 필요합니다."
+            }
+          }
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "extraMavenRepos": [
+              "https://repository.map.naver.com/archive/maven"
+            ]
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a5a5ea46-e2ad-47a7-a2a0-a98d9e896e47"
+      }
+    },
+    "owner": "rylie"
+  }
+}
