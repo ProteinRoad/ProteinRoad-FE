@@ -24,7 +24,7 @@ interface ServerResponse {
   statusCode: number;
 }
 
-const API_ENDPOINT = 'https://4cigg8zvhe.execute-api.ap-northeast-2.amazonaws.com/prod/logs';
+const API_ENDPOINT = ########
 const MAX_RETRIES = 1;
 const USER_ID_KEY = '@protein_road_user_id';
 

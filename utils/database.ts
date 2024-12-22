@@ -4,7 +4,7 @@ import { Platform } from 'react-native';
 import axios from 'axios';
 
 // DB 파일 URL 설정
-const DB_URL = 'https://proteinroad-bucket.s3.ap-northeast-2.amazonaws.com/proteinroad.db';
+const DB_URL = #######
 
 export interface Restaurant {
   restaurant_id: string;

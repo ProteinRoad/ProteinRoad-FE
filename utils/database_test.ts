@@ -15,7 +15,7 @@ let db: SQLite.SQLiteDatabase | null = null;
 async function openDatabase(): Promise<SQLite.SQLiteDatabase> {
   if (db) return db;  // 이미 초기화된 경우 재사용
 
-  const asset = require('../assets/data/test.db');
+  const asset = #########
   const assetModule = Asset.fromModule(asset);
   await assetModule.downloadAsync();
 
