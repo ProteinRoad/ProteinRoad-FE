@@ -1,50 +1,100 @@
-# Welcome to your Expo app 👋
+ Protein Road 🥗
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+단백질 식단 관리를 위한 맛집 찾기 앱
 
-## Get started
+## 주요 기능
 
-1. Install dependencies
+### 🗺️ 지도 기반 맛집 탐색
+- 네이버 맵 API를 활용한 맛집 위치 표시
+- 맞춤형 마커 아이콘으로 정보 상태 표시
+  - 영양정보 있음
+  - 영양정보 분석 중
+  - 영양정보 없음
 
-   ```bash
-   npm install
-   ```
+### 📊 영양 정보 제공
+- 메뉴별 상세 영양 성분 정보
+  - 칼로리
+  - 단백질
+  - 탄수화물
+  - 지방
+- 국가 영양성분 데이터베이스 기반 정보 제공
 
-2. Start the app
+### 👥 커뮤니티 기반 정보 수집
+- 사용자 관심도 기반 영양정보 분석 요청
+- 10명 이상 관심 등록 시 전문기관 영양 분석 진행
+- 실시간 관심도 현황 표시
 
-   ```bash
-    npx expo start
-   ```
+## 기술 스택
 
-In the output, you'll find options to open the app in a
+### Frontend
+- React Native + Expo
+- TypeScript
+- React Navigation
+- Reanimated
+- Naver Maps API
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Backend
+- AWS Lambda
+- DynamoDB
+- API Gateway
+- S3
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Database
+- SQLite (로컬)
+  - 레스토랑 정보
+  - 메뉴 정보
+  - 영양 성분 데이터
 
-## Get a fresh project
+## 프로젝트 구조
+tree
+protein-road/
+├── app/
+│ ├── (tabs)/
+│ │ ├── layout.tsx
+│ │ ├── index.tsx
+│ │ └── Map.tsx
+│ └── (screens)/
+├── components/
+│ ├── map/
+│ │ ├── CustomMarker.tsx
+│ │ ├── CustomBottomSheet.tsx
+│ │ ├── CustomMenu.tsx
+│ │ └── CustomMenuNotfound.tsx
+│ └── render/
+│ ├── MapMarkerRenderer.tsx
+│ ├── BannerRenderer.tsx
+│ └── ContentRenderer.tsx
+├── utils/
+│ └── database.ts
+├── store/
+│ └── useProteinStore.ts
+└── assets/
+├── contents/
+├── fonts/
+└── lotties/
 
-When you're ready, run:
+## 환경 설정
 
-```bash
-npm run reset-project
-```
+의존성 설치
+npm install
+개발 서버 실행
+npx expo prebuild
+iOS 시뮬레이터 실행
+npx expo run:ios
+안드로이드 에뮬레이터 실행
+npx expo run:android
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
+### 필수 환경 변수
+NAVER_MAP_CLIENT_ID=your_client_id
+AWS_API_ENDPOINT=your_api_endpoint
 
-To learn more about developing your project with Expo, look at the following resources:
+### 개발 환경 요구사항
+- Node.js 16.x 이상
+- Expo CLI
+- iOS 시뮬레이터 또는 안드로이드 에뮬레이터
+- Xcode (iOS 빌드용)
+- Android Studio (안드로이드 빌드용)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 라이선스
+MIT License
